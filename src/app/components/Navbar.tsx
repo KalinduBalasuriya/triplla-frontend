@@ -5,36 +5,52 @@ import { useState, useRef, useEffect } from "react";
 
 const featuresDropdown = [
   {
-    category: "Operations",
+    category: "Sales",
     items: [
-      {
-        label: "Inquiry Management",
-        desc: "Capture & track tourist inquiries",
-      },
-      { label: "Booking Engine", desc: "End-to-end booking workflows" },
-      {
-        label: "Invoice & Payments",
-        desc: "Auto-generate invoices & track payments",
-      },
+      { label: "Inquiry Management", desc: "Capture and track travel leads" },
+      { label: "Travel CRM", desc: " Manage customers and follow-ups" },
+      { label: "Sales Pipeline", desc: "Move leads from inquiry to booking" },
     ],
   },
   {
     category: "Planning",
     items: [
       {
-        label: "Trip Builder",
-        desc: "Build day trips, safaris & island tours",
+        label: "Itinerary Builder",
+        desc: " Build day-by-day tour plans",
       },
-      { label: "Accommodation Planner", desc: "Manage hotels & lodges" },
-      { label: "Transport Coordination", desc: "Vehicles & driver scheduling" },
+      { label: "Quotation Management", desc: "Create accurate tour pricing" },
+      { label: "Proposal Generator", desc: "Send branded travel offers" },
     ],
   },
   {
-    category: "People",
+    category: "Operations",
     items: [
-      { label: "Client CRM", desc: "Full tourist profiles & history" },
-      { label: "Tour Guide Hiring", desc: "Schedule & pay guides" },
-      { label: "Team Management", desc: "Roles, permissions & staff" },
+      {
+        label: "Booking Management",
+        desc: "Manage tours and reservations",
+      },
+      { label: "Tour Calendar", desc: "Track upcoming travel operations" },
+      {
+        label: "Voucher Automation",
+        desc: "Generate service vouchers faster",
+      },
+    ],
+  },
+  {
+    category: "Finance",
+    items: [
+      { label: "Invoice & Payments", desc: "Track billing and collections" },
+      { label: "Supplier Ledger", desc: "Manage supplier balances" },
+      { label: "Profit Reports", desc: " View profit per tour" },
+    ],
+  },
+  {
+    category: "Growth",
+    items: [
+      { label: "OTA Management", desc: "Manage online travel channels" },
+      { label: "B2B Agent Portal", desc: "Support partner agents" },
+      { label: "Reports Dashboard", desc: " See business performance clearly" },
     ],
   },
 ];
@@ -144,26 +160,6 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-
-            <a
-              href="#pricing"
-              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors"
-            >
-              Pricing
-            </a>
-            <a
-              href="#testimonials"
-              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors"
-            >
-              Customer Feedbacks
-            </a>
-            <a
-              href="#resources"
-              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors"
-            >
-              Resources
-            </a>
-
             {/* Solutions */}
             <div ref={solutionsRef} className="relative">
               <button
@@ -219,6 +215,38 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+
+            <a
+              href="#pricing"
+              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors"
+            >
+              How it works
+            </a>
+
+            <a
+              href="#pricing"
+              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors"
+            >
+              Pricing
+            </a>
+            <a
+              href="#resources"
+              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors"
+            >
+              Resources
+            </a>
+            <a
+              href="#resources"
+              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors"
+            >
+              Company
+            </a>
+            <a
+              href="#testimonials"
+              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 rounded-md hover:bg-blue-50 transition-colors"
+            >
+              Customer Feedbacks
+            </a>
           </div>
 
           {/* CTA */}

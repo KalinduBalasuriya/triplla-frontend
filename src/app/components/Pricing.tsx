@@ -1,94 +1,110 @@
-const included = [
-  "Full platform access — all features",
-  "Inquiry management & CRM",
-  "Trip package builder",
-  "Booking & confirmation workflows",
-  "Invoice generation & payment tracking",
-  "Tour guide & transport management",
-  "Accommodation supplier directory",
-  "Live tour tracking dashboard",
-  "Revenue & performance reports",
-  "Custom branding & templates",
-  "Team accounts & role permissions",
-  "Dedicated setup & onboarding",
-  "Staff training session (1 day)",
-  "90-day priority support included",
+interface PricingCardProps {
+  type: string;
+  title: string;
+  desc?: string;
+  price: string;
+  features: string[];
+  buttontext: string;
+}
+const pricingCards: PricingCardProps[] = [
+  {
+    type: "One-time setup",
+    title: "Software Installation Package",
+    desc: "Best for travel companies that prefer a complete setup with a one-time implementation cost.",
+    price: "On Request",
+    features: [
+      "Full Triplla system setup",
+      "Company branding and basic configuration",
+      "User roles and team setup",
+      "Core travel workflow modules",
+      "Initial training and onboarding",
+      "Support during launch period",
+    ],
+    buttontext: "Request Demo",
+  },
+  {
+    type: "MONTHLY / YEARLY PLAN",
+    title: "Subscription-Based Package",
+    price: "On Request",
+    desc: "Best for agencies that want a flexible plan with continuous updates, support and scalable access.",
+    features: [
+      "Access to selected Triplla modules",
+      "Cloud-based travel management system",
+      "Regular updates and improvements",
+      "User and workflow configuration",
+      "Ongoing support option",
+      "Easy upgrade as your business grows",
+    ],
+    buttontext: "Request Pricing",
+  },
+  {
+    type: "CUSTOM SOLUTION",
+    title: "Enterprise & DMC Package",
+    price: "On Request",
+    desc: "Best for growing DMCs, multi-branch agencies, B2B travel networks and companies with custom workflows.",
+    features: [
+      "Advanced workflow customization",
+      "B2B agent portal",
+      "Customer portal",
+      "OTA management support",
+      "API or website integration options",
+      "Dedicated onboarding support",
+    ],
+    buttontext: "Talk to Sales",
+  },
 ];
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-20 lg:py-28" style={{ backgroundColor: "#f8fafc" }}>
+    <section
+      id="pricing"
+      className="py-20 lg:py-28"
+      style={{ backgroundColor: "#f8fafc" }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "#fcb51b" }}>Simple Pricing</p>
+          <p
+            className="text-xs font-semibold uppercase tracking-widest mb-3"
+            style={{ color: "#fcb51b" }}
+          >
+            Pricing plans
+          </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
-            Pay once. Use forever.
+            Flexible pricing for every travel business.
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-lg">
-            No subscriptions, no per-seat fees, no surprises. You get TourHub fully set up and running for your agency — one payment, yours permanently.
+          <p className="text-gray-500 max-w-3xl mx-auto text-lg">
+            Triplla is available with both one-time software installation &
+            subscription-based pricing. <br /> Since every travel business has
+            different workflows, team sizes and module requirements, pricing is
+            provided on request. Book a demo and we will recommend the best
+            Triplla setup for your agency, DMC or tour operation.
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {/* Main pricing card */}
-          <div className="lg:col-span-2 relative bg-white rounded-2xl border-2 shadow-xl overflow-hidden" style={{ borderColor: "#0071cd" }}>
-            {/* Top accent bar */}
-            <div className="h-1.5" style={{ background: "linear-gradient(to right, #0071cd, #fcb51b)" }} />
-
-            <div className="p-8">
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style={{ backgroundColor: "#e8f4ff", color: "#0071cd" }}>
-                    Full Platform
-                  </span>
-                  <h3 className="text-2xl font-extrabold text-gray-900">TourHub Complete</h3>
-                  <p className="text-sm text-gray-400 mt-1">Everything your agency needs to go fully digital</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs text-gray-400">Starting from</p>
-                  <p className="text-4xl font-black text-gray-900">$<span style={{ color: "#0071cd" }}>1,499</span></p>
-                  <p className="text-xs text-gray-400">one-time payment</p>
-                </div>
-              </div>
-
-              {/* Feature list */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
-                {included.map((f) => (
-                  <div key={f} className="flex items-start gap-2">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="flex-shrink-0 mt-0.5" stroke="#16a34a" strokeWidth="2.5">
-                      <polyline points="20,6 9,17 4,12"/>
-                    </svg>
-                    <span className="text-sm text-gray-600">{f}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href="#demo"
-                  className="flex-1 text-center py-3.5 rounded-xl font-semibold text-white text-sm transition-all hover:opacity-90 shadow-md"
-                  style={{ backgroundColor: "#0071cd" }}
-                >
-                  Request a Demo
-                </a>
-                <a
-                  href="#contact"
-                  className="flex-1 text-center py-3.5 rounded-xl font-semibold text-sm border-2 transition-all hover:bg-amber-50"
-                  style={{ borderColor: "#fcb51b", color: "#b8860b" }}
-                >
-                  Talk to Sales
-                </a>
-              </div>
-            </div>
-          </div>
-
+          {pricingCards.map((card, index) => (
+            <PricingCard key={index} pricingCardProps={card} />
+          ))}
           {/* Side cards */}
           <div className="flex flex-col gap-6">
             {/* What's included */}
-            <div className="bg-white rounded-2xl p-6 border border-gray-100 flex-1">
+            {/* <div className="bg-white rounded-2xl p-6 border border-gray-100 flex-1">
               <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <span className="w-5 h-5 rounded-md flex items-center justify-center" style={{ backgroundColor: "#e8f4ff" }}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0071cd" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span
+                  className="w-5 h-5 rounded-md flex items-center justify-center"
+                  style={{ backgroundColor: "#e8f4ff" }}
+                >
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#0071cd"
+                    strokeWidth="2.5"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
                 </span>
                 Setup Includes
               </h4>
@@ -114,18 +130,121 @@ export default function Pricing() {
                   <span>90-day support after launch</span>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Custom pricing */}
-            <div className="rounded-2xl p-6 border" style={{ backgroundColor: "#fffbeb", borderColor: "#fde68a" }}>
+            <div
+              className="rounded-2xl p-6 border"
+              style={{ backgroundColor: "#fffbeb", borderColor: "#fde68a" }}
+            >
               <span className="text-2xl mb-3 block">🏢</span>
-              <h4 className="font-bold text-gray-900 mb-2">Large Agency?</h4>
-              <p className="text-sm text-gray-500 mb-4">Multiple branches, large teams, or custom integrations? Let's talk about a tailored plan.</p>
-              <a href="#contact" className="text-sm font-semibold" style={{ color: "#b8860b" }}>Get a custom quote →</a>
+              <h4 className="font-bold text-gray-900 mb-2">
+                Need a Custom Solution?
+              </h4>
+              <p className="text-sm text-gray-500 mb-4">
+                Not sure which plan is right for your business? Book a free demo
+                and our team will understand your workflow, recommend the best
+                setup and provide a pricing proposal based on your actual
+                requirements.
+              </p>
+              <a
+                href="#contact"
+                className="text-sm font-semibold"
+                style={{ color: "#b8860b" }}
+              >
+                Request a Free Demo →
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function PricingCard({
+  pricingCardProps,
+}: {
+  pricingCardProps: PricingCardProps;
+}) {
+  return (
+    <div
+      className="relative bg-white rounded-2xl border-2 shadow-xl overflow-hidden"
+      style={{ borderColor: "#0071cd" }}
+    >
+      {/* Top accent bar */}
+      <div
+        className="h-1.5"
+        style={{
+          background: "linear-gradient(to right, #0071cd, #fcb51b)",
+        }}
+      />
+
+      <div className="p-8 flex flex-col justify-between h-full">
+        <div className="flex items-start justify-between mb-6">
+          <div>
+            <span
+              className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-3"
+              style={{ backgroundColor: "#e8f4ff", color: "#0071cd" }}
+            >
+              {pricingCardProps.type}
+            </span>
+            <h3 className="text-2xl font-extrabold text-gray-900">
+              {pricingCardProps.title}
+            </h3>
+
+            <p className="text-sm text-gray-400 mt-1">
+              {pricingCardProps.desc}
+            </p>
+          </div>
+        </div>
+
+        {/* Feature list */}
+        <div className="grid grid-cols-1 sm:grid-cols-1 gap-2 mb-8">
+          {pricingCardProps.features.map((f) => (
+            <div key={f} className="flex items-start gap-2">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="flex-shrink-0 mt-0.5"
+                stroke="#16a34a"
+                strokeWidth="2.5"
+              >
+                <polyline points="20,6 9,17 4,12" />
+              </svg>
+              <span className="text-sm text-gray-600">{f}</span>
+            </div>
+          ))}
+        </div>
+        <div>
+          <div className="text-left mb-6">
+            <p className="text-xs text-gray-400">Price</p>
+            <p className="text-4xl font-black text-gray-900">
+              <span style={{ color: "#0071cd" }}>On Request</span>
+            </p>
+            <p className="text-xs text-gray-400">one-time payment</p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href="#demo"
+              className="flex-1 text-center py-3.5 rounded-xl font-semibold text-white text-sm transition-all hover:opacity-90 shadow-md"
+              style={{ backgroundColor: "#0071cd" }}
+            >
+              {pricingCardProps.buttontext}
+            </a>
+          </div>
+          {/* <a
+                  href="#contact"
+                  className="flex-1 text-center py-3.5 rounded-xl font-semibold text-sm border-2 transition-all hover:bg-amber-50"
+                  style={{ borderColor: "#fcb51b", color: "#b8860b" }}
+                >
+                  Talk to Sales
+                </a> */}
+        </div>
+      </div>
+    </div>
   );
 }
