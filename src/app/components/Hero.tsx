@@ -135,7 +135,7 @@ export default function Hero() {
                     <div className="w-3 h-3 rounded-full bg-white opacity-30" />
                   </div>
                   <span className="text-xs text-white opacity-70 font-medium">
-                    TourHub Dashboard
+                    Triplla Dashboard
                   </span>
                   <div className="w-16" />
                 </div>
