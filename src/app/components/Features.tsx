@@ -1,3 +1,14 @@
+import {
+  Brain,
+  Cable,
+  ChartCandlestick,
+  FolderTree,
+  Handshake,
+  ReceiptText,
+  SquarePercent,
+  UserRoundArrowLeft,
+} from "lucide-react";
+
 const features = [
   {
     title: "Smart Inquiry & Lead Management",
@@ -365,37 +376,37 @@ export default function Features() {
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
             {
-              icon: "🗺️",
+              icon: <Brain className="w-5 h-5 text-brand-blue" />,
               title: "Smart Travel CRM",
               desc: "Manage customer profiles, travel history, preferences, communication and documents in one place.",
             },
             {
-              icon: "🧑‍🤝‍🧑",
+              icon: <UserRoundArrowLeft className="w-5 h-5 text-brand-blue" />,
               title: "Supplier Management",
               desc: "Organize hotels, guides, drivers, transport providers and activity suppliers with rates and booking details.",
             },
             {
-              icon: "🏨",
+              icon: <ReceiptText className="w-5 h-5 text-brand-blue" />,
               title: "Voucher & Invoice Automation",
               desc: "Generate professional vouchers and invoices from confirmed booking data without repeated manual typing.",
             },
             {
-              icon: "📊",
+              icon: <Handshake className="w-5 h-5 text-brand-blue" />,
               title: "B2B & Customer Portals",
               desc: "Give agents and customers a smoother way to view proposals, bookings, documents and payment details.",
             },
             {
-              icon: "📊",
+              icon: <FolderTree className="w-5 h-5 text-brand-blue" />,
               title: "Reports & Dashboard",
               desc: "See leads, bookings, payments, operations and profit performance through clear business dashboards.",
             },
             {
-              icon: "📊",
+              icon: <ChartCandlestick className="w-5 h-5 text-brand-blue" />,
               title: "OTA Management",
               desc: "Manage bookings and inquiries from online travel channels such as Viator, GetYourGuide and other OTA platforms in one connected workflow.",
             },
             {
-              icon: "📊",
+              icon: <Cable className="w-5 h-5 text-brand-blue" />,
               title: "Website, Email & WhatsApp Integration",
               desc: "Connect your website, WhatsApp, email and digital lead sources to keep every inquiry under control.",
             },

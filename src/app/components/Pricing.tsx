@@ -1,11 +1,5 @@
-interface PricingCardProps {
-  type: string;
-  title: string;
-  desc?: string;
-  price: string;
-  features: string[];
-  buttontext: string;
-}
+import PricingCards, { type PricingCardProps } from "./cards/PricingCards";
+
 const pricingCards: PricingCardProps[] = [
   {
     type: "One-time setup",
@@ -36,6 +30,7 @@ const pricingCards: PricingCardProps[] = [
       "Easy upgrade as your business grows",
     ],
     buttontext: "Request Pricing",
+    popular: true,
   },
   {
     type: "CUSTOM SOLUTION",
@@ -58,21 +53,21 @@ export default function Pricing() {
   return (
     <section
       id="pricing"
-      className="py-20 lg:py-28"
+      className="py-12 lg:py-16"
       style={{ backgroundColor: "#f8fafc" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 lg:mb-10">
           <p
-            className="text-xs font-semibold uppercase tracking-widest mb-3"
+            className="text-[11px] font-semibold uppercase tracking-widest mb-2"
             style={{ color: "#fcb51b" }}
           >
             Pricing plans
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-gray-900 mb-2.5">
             Flexible pricing for every travel business.
           </h2>
-          <p className="text-gray-500 max-w-3xl mx-auto text-lg">
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">
             Triplla is available with both one-time software installation &
             subscription-based pricing. <br /> Since every travel business has
             different workflows, team sizes and module requirements, pricing is
@@ -81,170 +76,39 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-          {/* Main pricing card */}
-          {pricingCards.map((card, index) => (
-            <PricingCard key={index} pricingCardProps={card} />
-          ))}
-          {/* Side cards */}
-          <div className="flex flex-col gap-6">
-            {/* What's included */}
-            {/* <div className="bg-white rounded-2xl p-6 border border-gray-100 flex-1">
-              <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <span
-                  className="w-5 h-5 rounded-md flex items-center justify-center"
-                  style={{ backgroundColor: "#e8f4ff" }}
-                >
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#0071cd"
-                    strokeWidth="2.5"
-                  >
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-                </span>
-                Setup Includes
-              </h4>
-              <div className="flex flex-col gap-3 text-sm text-gray-500">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">🔧</span>
-                  <span>Platform configuration for your agency</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">📦</span>
-                  <span>Import your existing data</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">🎨</span>
-                  <span>Branded templates & invoice design</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">👥</span>
-                  <span>On-site staff training session</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">📞</span>
-                  <span>90-day support after launch</span>
-                </div>
-              </div>
-            </div> */}
+        {/* Interactive pricing cards (client component) */}
+        <PricingCards cards={pricingCards} />
 
-            {/* Custom pricing */}
-            <div
-              className="rounded-2xl p-6 border"
-              style={{ backgroundColor: "#fffbeb", borderColor: "#fde68a" }}
-            >
-              <span className="text-2xl mb-3 block">🏢</span>
-              <h4 className="font-bold text-gray-900 mb-2">
-                Need a Custom Solution?
-              </h4>
-              <p className="text-sm text-gray-500 mb-4">
-                Not sure which plan is right for your business? Book a free demo
-                and our team will understand your workflow, recommend the best
-                setup and provide a pricing proposal based on your actual
-                requirements.
-              </p>
-              <a
-                href="#contact"
-                className="text-sm font-semibold"
-                style={{ color: "#b8860b" }}
-              >
-                Request a Free Demo →
-              </a>
+        {/* Custom solution banner */}
+        <div className="max-w-5xl mx-auto mt-5">
+          <div
+            className="rounded-xl p-4 sm:p-5 border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+            style={{ backgroundColor: "#fffbeb", borderColor: "#fde68a" }}
+          >
+            <div className="flex items-start gap-3 max-w-2xl">
+              <span className="text-xl leading-none">🏢</span>
+              <div>
+                <h4 className="font-bold text-gray-900 text-sm mb-0.5">
+                  Need a Custom Solution?
+                </h4>
+                <p className="text-xs text-gray-500">
+                  Not sure which plan is right for your business? Book a free
+                  demo and our team will understand your workflow, recommend the
+                  best setup and provide a pricing proposal based on your actual
+                  requirements.
+                </p>
+              </div>
             </div>
+            <a
+              href="#contact"
+              className="text-[13px] font-semibold whitespace-nowrap"
+              style={{ color: "#b8860b" }}
+            >
+              Request a Free Demo →
+            </a>
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function PricingCard({
-  pricingCardProps,
-}: {
-  pricingCardProps: PricingCardProps;
-}) {
-  return (
-    <div
-      className="relative bg-white rounded-2xl border-2 shadow-xl overflow-hidden"
-      style={{ borderColor: "#0071cd" }}
-    >
-      {/* Top accent bar */}
-      <div
-        className="h-1.5"
-        style={{
-          background: "linear-gradient(to right, #0071cd, #fcb51b)",
-        }}
-      />
-
-      <div className="p-8 flex flex-col justify-between h-full">
-        <div className="flex items-start justify-between mb-6">
-          <div>
-            <span
-              className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-3"
-              style={{ backgroundColor: "#e8f4ff", color: "#0071cd" }}
-            >
-              {pricingCardProps.type}
-            </span>
-            <h3 className="text-2xl font-extrabold text-gray-900">
-              {pricingCardProps.title}
-            </h3>
-
-            <p className="text-sm text-gray-400 mt-1">
-              {pricingCardProps.desc}
-            </p>
-          </div>
-        </div>
-
-        {/* Feature list */}
-        <div className="grid grid-cols-1 sm:grid-cols-1 gap-2 mb-8">
-          {pricingCardProps.features.map((f) => (
-            <div key={f} className="flex items-start gap-2">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                className="flex-shrink-0 mt-0.5"
-                stroke="#16a34a"
-                strokeWidth="2.5"
-              >
-                <polyline points="20,6 9,17 4,12" />
-              </svg>
-              <span className="text-sm text-gray-600">{f}</span>
-            </div>
-          ))}
-        </div>
-        <div>
-          <div className="text-left mb-6">
-            <p className="text-xs text-gray-400">Price</p>
-            <p className="text-4xl font-black text-gray-900">
-              <span style={{ color: "#0071cd" }}>On Request</span>
-            </p>
-            <p className="text-xs text-gray-400">one-time payment</p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href="#demo"
-              className="flex-1 text-center py-3.5 rounded-xl font-semibold text-white text-sm transition-all hover:opacity-90 shadow-md"
-              style={{ backgroundColor: "#0071cd" }}
-            >
-              {pricingCardProps.buttontext}
-            </a>
-          </div>
-          {/* <a
-                  href="#contact"
-                  className="flex-1 text-center py-3.5 rounded-xl font-semibold text-sm border-2 transition-all hover:bg-amber-50"
-                  style={{ borderColor: "#fcb51b", color: "#b8860b" }}
-                >
-                  Talk to Sales
-                </a> */}
-        </div>
-      </div>
-    </div>
   );
 }
