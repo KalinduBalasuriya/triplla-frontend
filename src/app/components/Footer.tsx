@@ -19,12 +19,15 @@ export default function Footer() {
                 />
               </div>
               <span className="font-bold text-xl tracking-tight text-white">
-                Tour<span style={{ color: "#fcb51b" }}>Suite</span>
+                Triplla
               </span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-xs mb-5">
-              The all-in-one management platform for travel agencies. From
-              inquiry to invoice, manage your entire operation in one place.
+              Triplla is an all-in-one travel management software built for
+              travel agencies, DMCs, tour operators and tourism businesses.
+            </p>
+            <p className="text-sm text-gray-300 leading-relaxed max-w-xs mb-5">
+              Your travel business, simplified.
             </p>
             <div className="flex gap-3">
               {/* Social icons */}
@@ -66,15 +69,18 @@ export default function Footer() {
           {/* Links */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
-              Product
+              Quick Links
             </h4>
             <div className="flex flex-col gap-2">
               {[
+                "Home",
                 "Features",
+                "Solutions",
                 "Pricing",
+                "Customer Feedback",
+                "Resources",
                 "Request Demo",
-                "What's New",
-                "Security",
+                "Login",
               ].map((l) => (
                 <a
                   key={l}
@@ -93,11 +99,16 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-2">
               {[
-                "Day Tour Operators",
-                "Safari Companies",
-                "Island Tours",
-                "Inbound Operators",
-                "Multi-Destination",
+                "Tour Operators",
+                "DMC Companies",
+                "Inbound Travel Agencies",
+                "Outbound Travel Agencies",
+                "Group Tour Operators",
+                "FIT Tour Specialists",
+                "MICE Travel Teams",
+                "Customized Tour Specialists",
+                "B2B Travel Agents",
+                "Growing Travel Startups",
               ].map((l) => (
                 <a
                   key={l}
@@ -130,8 +141,13 @@ export default function Footer() {
             <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4 mt-6">
               Contact
             </h4>
-            <p className="text-sm text-gray-400">hello@toursuite.io</p>
-            <p className="text-sm text-gray-400">+94 11 234 5678</p>
+            <p className="text-sm text-gray-400">hello@triplla.io</p>
+            <p className="text-sm text-gray-400">sales@triplla.com</p>
+            <p className="text-sm text-gray-400">+94 77 381 2352</p>
+            <p className="text-sm text-gray-400">+94 71 724 9544</p>
+            <p className="text-sm text-gray-400">
+              No. 477/4, Makumbura, Pannipitiya, Sri Lanka
+            </p>
           </div>
         </div>
       </div>
@@ -140,8 +156,9 @@ export default function Footer() {
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} TourHub. All rights reserved.
+            © {new Date().getFullYear()} riplla. All rights reserved.
           </p>
+          <p className="text-xs text-gray-500">Powered by Designfox Pvt Ltd </p>
           <div className="flex gap-5">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
               (l) => (
