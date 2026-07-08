@@ -73,15 +73,13 @@ function CheckIcon() {
 }
 
 export default function PricingCards({ cards }: { cards: PricingCardProps[] }) {
-  // Selected card drives the highlighted (blue) design. Defaults to the
-  // recommended plan (popular: true) so the section looks the same on load.
   const [selectedIndex, setSelectedIndex] = useState(() => {
     const i = cards.findIndex((c) => c.popular);
     return i === -1 ? 0 : i;
   });
 
   return (
-    <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5 items-stretch">
+    <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 items-stretch">
       {cards.map((card, index) => (
         <PricingCard
           key={index}
@@ -129,7 +127,7 @@ function PricingCard({
           onSelect();
         }
       }}
-      className={`relative flex flex-col rounded-2xl p-5 cursor-pointer select-none outline-none transition-all duration-200 ${
+      className={`relative flex flex-col rounded-2xl p-5 lg:p-7 cursor-pointer select-none outline-none transition-all duration-200 ${
         selected ? "" : "bg-white border hover:-translate-y-1"
       }`}
       style={
@@ -144,10 +142,10 @@ function PricingCard({
             }
       }
     >
-      {/* "Most Popular" stays pinned to the recommended plan, in both states */}
+      {/* Most Popular badge */}
       {popular && (
         <span
-          className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
+          className="absolute top-4 right-4 lg:top-5 lg:right-5 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
           style={
             selected
               ? { backgroundColor: "rgba(255,255,255,0.22)", color: "#ffffff" }
@@ -158,14 +156,14 @@ function PricingCard({
         </span>
       )}
 
-      {/* Icon */}
-      <div className="mb-2.5">
+      {/* Icon — larger on desktop */}
+      <div className="hidden md:block mb-2.5 lg:mb-4">
         <CubeIcon variant={cubeVariant} />
       </div>
 
       {/* Plan category */}
       <p
-        className="mb-1.5 text-[10px] font-bold uppercase tracking-widest"
+        className="mb-1.5 mt-8 md:mt-0 text-[10px] lg:text-xs font-bold uppercase tracking-widest"
         style={{ color: eyebrowColor }}
       >
         {type}
@@ -173,7 +171,7 @@ function PricingCard({
 
       {/* Title */}
       <h3
-        className="mb-1.5 text-md font-extrabold leading-tight"
+        className="mb-1.5 lg:mb-2 text-md lg:text-xl font-extrabold leading-tight"
         style={{ color: selected ? "#ffffff" : "#0f172a" }}
       >
         {title}
@@ -182,7 +180,7 @@ function PricingCard({
       {/* Description */}
       {desc && (
         <p
-          className="mb-2 text-xs leading-relaxed"
+          className="mb-2 lg:mb-3 text-xs lg:text-xs leading-relaxed"
           style={{ color: selected ? "rgba(255,255,255,0.82)" : "#64748b" }}
         >
           {desc}
@@ -190,22 +188,22 @@ function PricingCard({
       )}
 
       {/* Price */}
-      <div className="mb-3">
+      <div className="mb-3 lg:mb-5">
         <span
-          className="text-[16px] font-extrabold leading-none"
+          className="font-extrabold leading-none"
           style={{ color: selected ? "#ffffff" : "#0f172a" }}
         >
-          <span className="text-sm">Price : {price} </span>
+          <span className="text-sm lg:text-base">Price : {price}</span>
         </span>
       </div>
 
       {/* Features */}
-      <div className="flex flex-col gap-1.5 mb-4">
+      <div className="flex flex-col gap-1.5 lg:gap-2.5 mb-4 lg:mb-6">
         {features.map((f) => (
           <div key={f} className="flex items-start gap-2">
             <CheckIcon />
             <span
-              className="text-xs leading-snug"
+              className="text-xs lg:text-sm leading-snug"
               style={{ color: selected ? "#ffffff" : "#475569" }}
             >
               {f}
@@ -214,13 +212,13 @@ function PricingCard({
         ))}
       </div>
 
-      {/* Spacer keeps the button aligned to the bottom */}
       <div className="flex-1" />
 
       {/* CTA */}
+
       <a
         href="#demo"
-        className="block text-center py-2.5 rounded-lg font-bold text-[13px] transition-opacity hover:opacity-90"
+        className="block text-center py-2.5 lg:py-3 rounded-lg lg:rounded-xl font-bold text-[13px] lg:text-sm transition-opacity hover:opacity-90"
         style={
           selected
             ? { backgroundColor: "#ffffff", color: "#0071cd" }

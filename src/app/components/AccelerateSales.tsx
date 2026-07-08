@@ -100,10 +100,10 @@ export default function AccelerateSales() {
               className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20 text-center"
             >
               <p
-                className="font-black text-white mb-0.5 leading-tight"
+                className="lg:text-2xl font-black text-white mb-0.5 leading-tight"
                 style={{
                   color: s.value === "Zero" ? "#fcb51b" : "white",
-                  fontSize: s.value.length > 4 ? "1.1rem" : "1.6rem",
+                  // fontSize: s.value.length > 4 ? "1.1rem" : "1.6rem",
                 }}
               >
                 {s.value}
