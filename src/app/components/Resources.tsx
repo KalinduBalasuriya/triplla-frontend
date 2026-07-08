@@ -19,7 +19,7 @@ const resources = [
   {
     type: "Checklist",
     title: "Tour Package Setup Checklist",
-    desc: "Everything you need to configure — accommodations, transport, guides, pricing — before you launch a new package.",
+    desc: "Everything you need to configure accommodations, transport, guides, pricing before you launch a new package.",
     color: "#16a34a",
     bg: "#dcfce7",
     icon: <BookmarkCheck className="w-5 h-5 text-green-500" />,
@@ -57,7 +57,7 @@ export default function Resources() {
             >
               Resources
             </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
+            <h2 className="text-xl sm:text-4xl font-extrabold text-gray-900">
               Learn & grow with Triplla.
             </h2>
           </div>
@@ -90,7 +90,7 @@ export default function Resources() {
                 <h3 className="text-sm font-bold text-gray-900 mb-2 leading-snug group-hover:text-blue-700 transition-colors">
                   {r.title}
                 </h3>
-                <p className="text-xs text-gray-400 leading-relaxed">
+                <p className="text-xs lg:text-sm text-gray-400 leading-relaxed">
                   {r.desc}
                 </p>
               </div>

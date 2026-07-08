@@ -1,3 +1,4 @@
+import { Building, Home } from "lucide-react";
 import PricingCards, { type PricingCardProps } from "./cards/PricingCards";
 
 const pricingCards: PricingCardProps[] = [
@@ -59,12 +60,12 @@ export default function Pricing() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 lg:mb-10">
           <p
-            className="text-[11px] font-semibold uppercase tracking-widest mb-2"
+            className="text-xs font-semibold uppercase tracking-widest mb-2"
             style={{ color: "#fcb51b" }}
           >
             Pricing plans
           </p>
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-gray-900 mb-2.5">
+          <h2 className="text-xl sm:text-2xl lg:text-4xl font-extrabold text-gray-900 mb-2.5">
             Flexible pricing for every travel business.
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base">
@@ -86,12 +87,17 @@ export default function Pricing() {
             style={{ backgroundColor: "#fffbeb", borderColor: "#fde68a" }}
           >
             <div className="flex items-start gap-3 max-w-2xl">
-              <span className="text-xl leading-none">🏢</span>
+              {/* <span
+                className="hidden md:block text-xl leading-none"
+                style={{ color: "#b8860b" }}
+              >
+                <Home />
+              </span> */}
               <div>
-                <h4 className="font-bold text-gray-900 text-sm mb-0.5">
+                <h4 className="font-bold text-gray-900 text-sm lg:text-md mb-0.5">
                   Need a Custom Solution?
                 </h4>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs lg:text-sm text-gray-500">
                   Not sure which plan is right for your business? Book a free
                   demo and our team will understand your workflow, recommend the
                   best setup and provide a pricing proposal based on your actual

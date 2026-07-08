@@ -298,23 +298,24 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="py-20 lg:py-28"
+      className="py-12 lg:py-28"
       style={{ backgroundColor: "#f8fafc" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        {/* Header */}
+        <div className="text-center mb-8 lg:mb-16">
           <p
-            className="text-xs font-semibold uppercase tracking-widest mb-3"
+            className="text-xs font-semibold uppercase tracking-widest mb-2 lg:mb-3"
             style={{ color: "#0071cd" }}
           >
             Platform Features
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 lg:mb-4">
             Everything your travel team needs,
             <br />
             connected in one place.
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-lg">
+          <p className="text-gray-500 max-w-xl mx-auto text-sm lg:text-lg">
             Triplla connects your sales, reservations, operations, suppliers,
             finance and reporting into one simple system. Your team can manage
             every inquiry, booking and tour with more speed, accuracy and
@@ -322,16 +323,17 @@ export default function Features() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-16">
+        {/* Feature rows */}
+        <div className="flex flex-col gap-8 lg:gap-16">
           {features.map((feat, idx) => (
             <div
               key={feat.title}
-              className={`flex flex-col ${idx % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-10 lg:gap-16`}
+              className={`flex flex-col ${idx % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-6 lg:gap-16`}
             >
               {/* Text */}
-              <div className="flex-1 max-w-lg">
+              <div className="flex-1 w-full max-w-lg">
                 <span
-                  className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 border"
+                  className="inline-block text-xs font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full mb-3 lg:mb-4 border"
                   style={{
                     backgroundColor: feat.bg,
                     color: feat.accent,
@@ -340,27 +342,30 @@ export default function Features() {
                 >
                   {feat.tag}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                <h3 className="text-lg sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 lg:mb-4">
                   {feat.title}
                 </h3>
-                <p className="text-gray-500 leading-relaxed text-base">
+                <p className="text-gray-500 leading-relaxed text-xs sm:text-sm lg:text-base">
                   {feat.desc}
                 </p>
-                <h4 className="text-sm font-semibold text-gray-900 mt-6 mb-2">
+                <h4 className="text-xs lg:text-sm font-semibold text-gray-900 mt-4 lg:mt-6 mb-1 lg:mb-2">
                   Why it matters
                 </h4>
-                <p className="text-gray-500 text-sm">{feat.whyItMatters}</p>
+                <p className="text-gray-500 text-xs lg:text-sm">
+                  {feat.whyItMatters}
+                </p>
+
                 <a
                   href="#demo"
-                  className="inline-flex items-center gap-2 mt-6 text-sm font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 mt-4 lg:mt-6 text-xs lg:text-sm font-semibold transition-colors"
                   style={{ color: feat.accent }}
                 >
                   Learn more →
                 </a>
               </div>
 
-              {/* Visual */}
-              <div className="flex-1 w-full max-w-md">
+              {/* Visual — hidden on mobile, visible on sm and above */}
+              <div className="hidden sm:block flex-1 w-full max-w-md">
                 <div
                   className="rounded-2xl p-4 border"
                   style={{ backgroundColor: feat.bg, borderColor: feat.bg }}
@@ -373,53 +378,63 @@ export default function Features() {
         </div>
 
         {/* Additional feature grid */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-10 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-5">
           {[
             {
-              icon: <Brain className="w-5 h-5 text-brand-blue" />,
+              icon: <Brain className="w-4 h-4 lg:w-5 lg:h-5 text-brand-blue" />,
               title: "Smart Travel CRM",
               desc: "Manage customer profiles, travel history, preferences, communication and documents in one place.",
             },
             {
-              icon: <UserRoundArrowLeft className="w-5 h-5 text-brand-blue" />,
+              icon: (
+                <UserRoundArrowLeft className="w-4 h-4 lg:w-5 lg:h-5 text-brand-blue" />
+              ),
               title: "Supplier Management",
               desc: "Organize hotels, guides, drivers, transport providers and activity suppliers with rates and booking details.",
             },
             {
-              icon: <ReceiptText className="w-5 h-5 text-brand-blue" />,
+              icon: (
+                <ReceiptText className="w-4 h-4 lg:w-5 lg:h-5 text-brand-blue" />
+              ),
               title: "Voucher & Invoice Automation",
               desc: "Generate professional vouchers and invoices from confirmed booking data without repeated manual typing.",
             },
             {
-              icon: <Handshake className="w-5 h-5 text-brand-blue" />,
+              icon: (
+                <Handshake className="w-4 h-4 lg:w-5 lg:h-5 text-brand-blue" />
+              ),
               title: "B2B & Customer Portals",
               desc: "Give agents and customers a smoother way to view proposals, bookings, documents and payment details.",
             },
             {
-              icon: <FolderTree className="w-5 h-5 text-brand-blue" />,
+              icon: (
+                <FolderTree className="w-4 h-4 lg:w-5 lg:h-5 text-brand-blue" />
+              ),
               title: "Reports & Dashboard",
               desc: "See leads, bookings, payments, operations and profit performance through clear business dashboards.",
             },
             {
-              icon: <ChartCandlestick className="w-5 h-5 text-brand-blue" />,
+              icon: (
+                <ChartCandlestick className="w-4 h-4 lg:w-5 lg:h-5 text-brand-blue" />
+              ),
               title: "OTA Management",
-              desc: "Manage bookings and inquiries from online travel channels such as Viator, GetYourGuide and other OTA platforms in one connected workflow.",
+              desc: "Manage bookings and inquiries from online travel channels such as Viator, GetYourGuide and other OTA platforms.",
             },
             {
-              icon: <Cable className="w-5 h-5 text-brand-blue" />,
+              icon: <Cable className="w-4 h-4 lg:w-5 lg:h-5 text-brand-blue" />,
               title: "Website, Email & WhatsApp Integration",
               desc: "Connect your website, WhatsApp, email and digital lead sources to keep every inquiry under control.",
             },
           ].map((item) => (
             <div
               key={item.title}
-              className="bg-white rounded-2xl p-5 border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all"
+              className="bg-white rounded-xl lg:rounded-2xl p-3 lg:p-5 border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all"
             >
-              <span className="text-2xl mb-3 block">{item.icon}</span>
-              <h4 className="text-sm font-bold text-gray-900 mb-1">
+              <span className="mb-2 lg:mb-3 block">{item.icon}</span>
+              <h4 className="text-xs font-bold text-gray-900 mb-1">
                 {item.title}
               </h4>
-              <p className="text-xs text-gray-400 leading-relaxed">
+              <p className="text-xs text-gray-400 leading-relaxed hidden sm:block">
                 {item.desc}
               </p>
             </div>

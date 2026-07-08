@@ -19,36 +19,36 @@ export default function DemoCTA() {
   return (
     <section
       id="demo"
-      className="py-20 lg:py-28"
+      className="py-12 lg:py-16"
       style={{ backgroundColor: "#f8fafc" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Left: info */}
             <div
-              className="p-8 lg:p-12"
+              className="p-6 lg:p-8"
               style={{
                 background: "linear-gradient(135deg, #0071cd 0%, #0058a3 100%)",
               }}
             >
               <p
-                className="text-xs font-semibold uppercase tracking-widest mb-4"
+                className="text-xs font-semibold uppercase tracking-widest mb-3"
                 style={{ color: "#fcb51b" }}
               >
                 Request a Demo
               </p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-4">
+              <h2 className="text-xl lg:text-2xl font-extrabold text-white mb-2 lg:mb-3">
                 See how Triplla can help your travel business.
               </h2>
-              <p className="text-blue-200 mb-8 leading-relaxed">
+              <p className="text-blue-200 text-xs lg:text-sm mb-4 lg:mb-6 leading-relaxed hidden md:block">
                 Book a short demo and discover how Triplla can make your daily
-                work easier. We’ll show you how to manage inquiries, quotations,
+                work easier. We'll show you how to manage inquiries, quotations,
                 bookings, suppliers, payments and reports in one simple
                 platform.
               </p>
 
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-3 lg:gap-4">
                 {[
                   {
                     icon: "🎯",
@@ -66,10 +66,10 @@ export default function DemoCTA() {
                     desc: "Ask questions, understand the system and decide later.",
                   },
                 ].map((item) => (
-                  <div key={item.title} className="flex items-start gap-4">
-                    <span className="text-xl">{item.icon}</span>
+                  <div key={item.title} className="flex items-start gap-3">
+                    <span className="text-lg hidden md:block">{item.icon}</span>
                     <div>
-                      <p className="text-sm font-bold text-white">
+                      <p className="text-xs font-bold text-white">
                         {item.title}
                       </p>
                       <p className="text-xs text-blue-200">{item.desc}</p>
@@ -80,32 +80,35 @@ export default function DemoCTA() {
             </div>
 
             {/* Right: form */}
-            <div className="p-8 lg:p-12">
+            <div className="p-6 lg:p-8">
               {submitted ? (
-                <div className="flex flex-col items-center justify-center h-full text-center gap-4">
+                <div className="flex flex-col items-center justify-center h-full text-center gap-3">
                   <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center text-3xl"
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-2xl"
                     style={{ backgroundColor: "#dcfce7" }}
                   >
                     ✅
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-gray-900">
                     Request received!
                   </h3>
-                  <p className="text-gray-500 text-sm">
+                  <p className="text-gray-500 text-xs">
                     Our team will reach out within 1 business day to schedule
                     your demo.
                   </p>
                 </div>
               ) : (
                 <>
-                  <h3 className="text-xl font-bold text-gray-900 mb-6">
+                  <h3 className="text-base lg:text-lg font-bold text-gray-900 mb-3 lg:mb-4">
                     Book your demo
                   </h3>
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="flex flex-col gap-2 lg:gap-3"
+                  >
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-3">
                       <div>
-                        <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                        <label className="block text-xs font-semibold text-gray-600 mb-1">
                           Your Name *
                         </label>
                         <input
@@ -115,12 +118,12 @@ export default function DemoCTA() {
                           onChange={(e) =>
                             setForm({ ...form, name: e.target.value })
                           }
-                          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
+                          className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-xs lg:text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
                           placeholder="Chamara Silva"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                        <label className="block text-xs font-semibold text-gray-600 mb-1">
                           Agency Name *
                         </label>
                         <input
@@ -130,13 +133,13 @@ export default function DemoCTA() {
                           onChange={(e) =>
                             setForm({ ...form, agency: e.target.value })
                           }
-                          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
+                          className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-xs lg:text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
                           placeholder="Emerald Isle Tours"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                      <label className="block text-xs font-semibold text-gray-600 mb-1">
                         Work Email *
                       </label>
                       <input
@@ -146,13 +149,13 @@ export default function DemoCTA() {
                         onChange={(e) =>
                           setForm({ ...form, email: e.target.value })
                         }
-                        className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
+                        className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-xs lg:text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
                         placeholder="chamara@emeraldisletours.com"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-600 mb-1.5">
-                        Mobile/ Whatsapp number *
+                      <label className="block text-xs font-semibold text-gray-600 mb-1">
+                        Mobile / WhatsApp number *
                       </label>
                       <input
                         required
@@ -161,12 +164,12 @@ export default function DemoCTA() {
                         onChange={(e) =>
                           setForm({ ...form, phone: e.target.value })
                         }
-                        className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
+                        className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-xs lg:text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
                         placeholder="+94712345678"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                      <label className="block text-xs font-semibold text-gray-600 mb-1">
                         Country *
                       </label>
                       <input
@@ -176,15 +179,15 @@ export default function DemoCTA() {
                         onChange={(e) =>
                           setForm({ ...form, country: e.target.value })
                         }
-                        className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
+                        className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-xs lg:text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
                         placeholder="Sri Lanka"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-600 mb-1.5">
-                        Number of employees*
+                      <label className="block text-xs font-semibold text-gray-600 mb-1">
+                        Number of employees *
                       </label>
-                      <select className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-600 focus:outline-none focus:border-blue-400 transition-colors bg-white">
+                      <select className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-xs lg:text-sm text-gray-600 focus:outline-none focus:border-blue-400 transition-colors bg-white">
                         <option>Below 5</option>
                         <option>5-19</option>
                         <option>20-49</option>
@@ -194,7 +197,7 @@ export default function DemoCTA() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full py-3.5 rounded-xl font-semibold text-white text-sm mt-2 transition-all hover:opacity-90 shadow-md"
+                      className="w-full py-2 lg:py-2.5 rounded-xl font-semibold text-white text-xs lg:text-sm mt-1 transition-all hover:opacity-90 shadow-md"
                       style={{ backgroundColor: "#0071cd" }}
                     >
                       Request A Demo →

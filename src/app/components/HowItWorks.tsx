@@ -1,3 +1,6 @@
+// Server Component (SSR) — no "use client"
+import StepCard from "./cards/StepCard";
+
 const steps = [
   {
     number: "01",
@@ -5,8 +8,8 @@ const steps = [
     desc: "Collect leads from WhatsApp, email, website forms, Meta Ads, Google Ads, chatbots and landing pages in one centralized lead inbox. Assign inquiries, set reminders and track every follow-up until the booking is won or lost.",
     icon: (
       <svg
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -19,11 +22,11 @@ const steps = [
   {
     number: "02",
     title: "Build the Itinerary",
-    desc: "Create professional day-by-day itineraries with hotels, transport, guides, activities, meals, images, travel notes, inclusions and exclusions. Reuse saved templates or customize each tour based on the client’s request.",
+    desc: "Create professional day-by-day itineraries with hotels, transport, guides, activities, meals, images, travel notes, inclusions and exclusions. Reuse saved templates or customize each tour based on the client's request.",
     icon: (
       <svg
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -42,8 +45,8 @@ const steps = [
     desc: "Calculate hotels, transport, activities, guide fees, visa charges, supplier costs, markups and margins in one place. Triplla helps your team send accurate quotations faster while keeping profit visible.",
     icon: (
       <svg
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -60,8 +63,8 @@ const steps = [
     desc: "Share polished travel proposals with your branding through email, WhatsApp or a secure link. Give customers a clear, modern and professional experience before they confirm.",
     icon: (
       <svg
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -78,8 +81,8 @@ const steps = [
     desc: "Manage hotel confirmations, transport reservations, supplier arrangements, customer approvals and booking status from one dashboard. Your team can see what is confirmed, pending or needs action.",
     icon: (
       <svg
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -96,8 +99,8 @@ const steps = [
     desc: "Assign drivers, guides and vehicles. Manage guest details, pickup times, documents, service notes and operation tasks so your team can run each tour with fewer mistakes.",
     icon: (
       <svg
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -118,8 +121,8 @@ const steps = [
     desc: "Create service vouchers, supplier vouchers, invoices and payment records without retyping the same details again and again.",
     icon: (
       <svg
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -138,8 +141,8 @@ const steps = [
     desc: "View revenue, supplier costs, margins, pending payments and profit or loss per tour. Triplla gives owners and managers the visibility needed to grow with control.",
     icon: (
       <svg
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -152,79 +155,49 @@ const steps = [
   },
 ];
 
-export default function HowItWorks() {
+const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-20 lg:py-28 bg-white">
+    <section id="how-it-works" className="py-10 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        {/* Header — font sizes unchanged from original */}
+        <div className="text-center mb-8 lg:mb-16">
           <p
-            className="text-xs font-semibold uppercase tracking-widest mb-3"
+            className="text-xs font-semibold uppercase tracking-widest mb-2 lg:mb-3"
             style={{ color: "#fcb51b" }}
           >
             From Inquiry to Invoice
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 lg:mb-4">
             Every Step Has
             <br />
             <span style={{ color: "#0071cd" }}>A Place In Triplla.</span>
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-lg">
+          <p className="text-gray-500 max-w-xl mx-auto text-sm lg:text-lg">
             Triplla replaces the chaos of manual management with a clear,
             end-to-end workflow purpose-built for travel agencies.
           </p>
         </div>
 
         <div className="relative">
-          {/* Connecting line for desktop */}
+          {/* Connecting line — desktop only */}
           <div
-            className="hidden lg:block absolute top-14 left-1/2 -translate-x-1/2 w-[85%] h-px"
+            className="hidden lg:block absolute top-11 left-1/2 -translate-x-1/2 w-[85%] h-px"
             style={{
               background:
                 "linear-gradient(to right, transparent, #e0edfa 10%, #e0edfa 90%, transparent)",
             }}
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* 2 cols on mobile, 4 on lg */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
             {steps.map((step, idx) => (
-              <div key={step.number} className="relative group">
-                <div className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="relative flex-shrink-0">
-                      <div
-                        className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-                        style={{
-                          backgroundColor:
-                            idx % 2 === 0 ? "#e8f4ff" : "#fffbeb",
-                        }}
-                      >
-                        <div
-                          style={{
-                            color: idx % 2 === 0 ? "#0071cd" : "#fcb51b",
-                          }}
-                        >
-                          {step.icon}
-                        </div>
-                      </div>
-                      <span
-                        className="absolute -top-2 -right-2 text-xs font-black text-white w-5 h-5 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: "#0071cd", fontSize: "9px" }}
-                      >
-                        {step.number}
-                      </span>
-                    </div>
-                    <h3 className="text-base font-bold text-gray-900 mt-2">
-                      {step.title}
-                    </h3>
-                  </div>
-                  <p className="text-sm text-gray-500 leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
-              </div>
+              <StepCard key={step.number} step={step} idx={idx} />
             ))}
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default HowItWorks;
