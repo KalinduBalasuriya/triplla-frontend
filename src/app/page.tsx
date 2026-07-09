@@ -21,7 +21,7 @@ export default function Home() {
       <AccelerateSales />
       <Testimonials />
       <Pricing />
-      <Resources />
+      {/* <Resources /> */}
       <DemoCTA />
       <Footer />
     </main>

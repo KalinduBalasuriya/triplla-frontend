@@ -85,10 +85,6 @@ export default function AccelerateSales() {
             Travel inquiries move fast. When your team takes too long to reply,
             checks prices manually, or misses follow-ups, bookings can easily go
             to another agency.
-            <br className="hidden sm:block" /> Triplla helps travel agencies,
-            DMCs and tour operators respond faster, send professional
-            quotations, track every lead and manage the full sales workflow from
-            one platform.
           </p>
         </div>
 

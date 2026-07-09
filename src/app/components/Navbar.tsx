@@ -96,13 +96,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-32 h-16 rounded-lg flex items-center justify-center">
+            <div className="w-32 h-16 rounded-lg flex items-center justify-center bg-slate-">
               <Image
                 src="/logo2.png"
                 alt="Triplla Logo"
                 className="object-contain"
-                height={96}
-                width={96}
+                height={120}
+                width={120}
               />
             </div>
             {/* <span
