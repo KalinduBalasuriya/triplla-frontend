@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
 type Step = {
   number: string;
   title: string;
@@ -9,68 +5,59 @@ type Step = {
   icon: React.ReactNode;
 };
 
-const StepCard = ({ step, idx }: { step: Step; idx: number }) => {
-  const [expanded, setExpanded] = useState(false);
-  const isEven = idx % 2 === 0;
-
-  // Show first 60 characters as preview on mobile
-  const previewLength = 50;
-  const isLong = step.desc.length > previewLength;
-  const preview = step.desc.slice(0, previewLength).trimEnd() + "...";
+export default function StepCard({ step, idx }: { step: Step; idx: number }) {
+  const isLeft = idx % 2 === 0;
 
   return (
-    <div className="relative group h-full">
-      <div className="bg-white rounded-xl p-3 lg:p-4 border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all duration-300 h-full flex flex-col">
-        {/* Icon + title */}
-        <div className="flex items-start gap-2 mb-2">
-          <div className="relative flex-shrink-0">
-            <div
-              className="w-8 h-8 lg:w-9 lg:h-9 rounded-lg md:flex items-center justify-center transition-all duration-300 group-hover:scale-110 hidden"
-              style={{ backgroundColor: isEven ? "#e8f4ff" : "#fffbeb" }}
+    /* Each row: full width, flex, center-aligned vertically */
+    <div className="relative flex items-center justify-center w-full ">
+      {/* ── LEFT CARD (even steps) ── */}
+      <div
+        className={`w-[calc(50%-2.5rem)] ${isLeft ? "flex justify-end pr-6" : "invisible"}`}
+      >
+        {isLeft && (
+          <div className="bg-gray-50 rounded-2xl p-6 max-w-sm w-full text-right shadow-sm border border-gray-100 hover:shadow-md hover:border-1 hover:border-blue-100">
+            <p
+              className="text-xs font-bold uppercase tracking-widest mb-2"
+              style={{ color: "#fcb51b" }}
             >
-              <div style={{ color: isEven ? "#0071cd" : "#fcb51b" }}>
-                {step.icon}
-              </div>
-            </div>
-            <span
-              className="bg-transparent sm:bg-brand-blue text-brand-blue absolute -top-1.5 -right-1.5 font-black sm:text-white w-4 h-4 rounded-full flex items-center justify-center"
-              style={{ fontSize: "8px" }}
-            >
-              {step.number}
-            </span>
+              Step {step.number}
+            </p>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              {step.title}
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
           </div>
-          <h3 className="text-xs lg:text-base font-bold text-gray-900 leading-snug mt-1">
-            {step.title}
-          </h3>
-        </div>
+        )}
+      </div>
 
-        {/* Description
-            - Mobile: shows preview text, expands to full on toggle
-            - sm and above: always full text, no toggle */}
-        <div className="flex flex-col flex-1">
-          <p className="text-xs lg:text-base text-gray-500 leading-relaxed">
-            {/* Mobile: preview or full based on expanded state */}
-            <span className="sm:hidden">
-              {isLong && !expanded ? preview : step.desc}
-            </span>
-            {/* Desktop: always full */}
-            <span className="hidden sm:inline">{step.desc}</span>
-          </p>
+      {/* ── ICON ON THE LINE ── */}
+      <div
+        className="flex-shrink-0 z-10 w-10 h-10 rounded-full border-2 flex items-center justify-center bg-white"
+        style={{ borderColor: "#0071cd", color: "#0071cd" }}
+      >
+        {step.icon}
+      </div>
 
-          {/* Read more / Show less — mobile only, only if text is long */}
-          {isLong && (
-            <button
-              className="sm:hidden mt-1.5 text-left text-xs font-semibold self-start"
-              style={{ color: "#0071cd" }}
-              onClick={() => setExpanded(!expanded)}
+      {/* ── RIGHT CARD (odd steps) ── */}
+      <div
+        className={`w-[calc(50%-2.5rem)] ${!isLeft ? "flex justify-start pl-6" : "invisible"}`}
+      >
+        {!isLeft && (
+          <div className="bg-gray-50 rounded-2xl p-6 max-w-sm w-full text-left shadow-sm border border-gray-100 hover:shadow-md hover:border-1 hover:border-blue-100">
+            <p
+              className="text-xs font-bold uppercase tracking-widest mb-2"
+              style={{ color: "#fcb51b" }}
             >
-              {expanded ? "Show less ↑" : "Read more ↓"}
-            </button>
-          )}
-        </div>
+              Step {step.number}
+            </p>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              {step.title}
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+          </div>
+        )}
       </div>
     </div>
   );
-};
-
-export default StepCard;
+}
