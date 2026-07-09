@@ -304,12 +304,25 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8 lg:mb-16">
-          <p
-            className="text-xs font-semibold uppercase tracking-widest mb-2 lg:mb-3"
-            style={{ color: "#0071cd" }}
+          <span
+            className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-widest mb-6 text-brand-yellow"
+            style={{ backgroundColor: "#fef6e3" }}
           >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3v4M10 5h4M5 10v4M3 12h4M17 13l1.6 3.4L22 18l-3.4 1.6L17 23l-1.6-3.4L12 18l3.4-1.6L17 13z" />
+            </svg>
             Platform Features
-          </p>
+          </span>
           <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 lg:mb-4">
             Everything your travel team needs,
             <br />
