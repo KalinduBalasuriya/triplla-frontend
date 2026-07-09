@@ -17,7 +17,7 @@ export default function Hero() {
           <div className="flex-1 text-center lg:text-left w-full max-w-4xl mx-auto lg:mx-0">
             {/* Badge */}
             <div
-              className=" inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4 sm:mb-6 border"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4 sm:mb-6 border"
               style={{
                 backgroundColor: "#e8f4ff",
                 borderColor: "#b3d9f7",
@@ -33,12 +33,16 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Heading
-                - Mobile: text-2xl, stacked naturally, no forced line breaks
-                - Desktop: text-4xl/6xl with line breaks as intended */}
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gray-900 mb-4 sm:mb-6">
+            {/* Heading */}
+            <h1
+              className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-gray-900 mb-4 sm:mb-6"
+              style={{ lineHeight: "1.25" }}
+            >
               One platform for your{" "}
-              <span className="relative inline-block">
+              <span
+                className="relative inline-block"
+                style={{ lineHeight: "1.35" }}
+              >
                 <span style={{ color: "#0071cd" }}>Entire Travel</span>
                 <svg
                   className="absolute -bottom-1 left-0 w-full"
