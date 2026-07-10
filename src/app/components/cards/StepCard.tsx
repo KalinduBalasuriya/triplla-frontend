@@ -16,7 +16,7 @@ export default function StepCard({ step, idx }: { step: Step; idx: number }) {
         className={`w-[calc(50%-2.5rem)] ${isLeft ? "flex justify-end pr-6" : "invisible"}`}
       >
         {isLeft && (
-          <div className="bg-gray-50 rounded-2xl p-6 max-w-sm w-full text-right shadow-sm border border-gray-100 hover:shadow-md hover:border-1 hover:border-blue-100">
+          <div className="bg-gray-50 rounded-2xl p-6 max-w-lg w-full text-right shadow-sm border border-gray-100 hover:shadow-md hover:border-1 hover:border-blue-100">
             <p
               className="text-xs font-bold uppercase tracking-widest mb-2"
               style={{ color: "#fcb51b" }}
@@ -44,7 +44,7 @@ export default function StepCard({ step, idx }: { step: Step; idx: number }) {
         className={`w-[calc(50%-2.5rem)] ${!isLeft ? "flex justify-start pl-6" : "invisible"}`}
       >
         {!isLeft && (
-          <div className="bg-gray-50 rounded-2xl p-6 max-w-sm w-full text-left shadow-sm border border-gray-100 hover:shadow-md hover:border-1 hover:border-blue-100">
+          <div className="bg-gray-50 rounded-2xl p-6 max-w-lg w-full text-left shadow-sm border border-gray-100 hover:shadow-md hover:border-1 hover:border-blue-100">
             <p
               className="text-xs font-bold uppercase tracking-widest mb-2"
               style={{ color: "#fcb51b" }}

@@ -68,7 +68,7 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-gray-500 mb-4">
               Quick Links
             </h4>
             <div className="flex flex-col gap-2">
@@ -94,7 +94,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-gray-500 mb-4">
               Solutions
             </h4>
             <div className="flex flex-col gap-2">
@@ -122,7 +122,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-gray-500 mb-4">
               Company
             </h4>
             <div className="flex flex-col gap-2">
@@ -138,7 +138,7 @@ export default function Footer() {
                 ),
               )}
             </div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-4 mt-6">
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-gray-500 mb-4 mt-6">
               Contact
             </h4>
             <p className="text-sm text-gray-400">hello@triplla.io</p>
@@ -155,17 +155,17 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-gray-500">
+          <p className="text-sm text-gray-500">
             © {new Date().getFullYear()} riplla. All rights reserved.
           </p>
-          <p className="text-xs text-gray-500">Powered by Designfox Pvt Ltd </p>
+          <p className="text-sm text-gray-500">Powered by Designfox Pvt Ltd </p>
           <div className="flex gap-5">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
               (l) => (
                 <a
                   key={l}
                   href="#"
-                  className="text-xs text-gray-500 hover:text-white transition-colors"
+                  className="text-sm text-gray-500 hover:text-white transition-colors"
                 >
                   {l}
                 </a>

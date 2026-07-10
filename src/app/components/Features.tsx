@@ -344,7 +344,7 @@ export default function Features() {
               className={`flex flex-col ${idx % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-6 lg:gap-16`}
             >
               {/* Text */}
-              <div className="flex-1 w-full max-w-lg">
+              <div className="flex-1 w-full max-w-xl">
                 <span
                   className="inline-block text-xs font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full mb-3 lg:mb-4 border"
                   style={{
@@ -378,7 +378,7 @@ export default function Features() {
               </div>
 
               {/* Visual — hidden on mobile, visible on sm and above */}
-              <div className="hidden sm:block flex-1 w-full max-w-md">
+              <div className="hidden sm:block flex-1 w-full max-w-xl">
                 <div
                   className="rounded-2xl p-4 border"
                   style={{ backgroundColor: feat.bg, borderColor: feat.bg }}
@@ -444,10 +444,10 @@ export default function Features() {
               className="bg-white rounded-xl lg:rounded-2xl p-3 lg:p-5 border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all"
             >
               <span className="mb-2 lg:mb-3 block">{item.icon}</span>
-              <h4 className="text-xs font-bold text-gray-900 mb-1">
+              <h4 className="text-sm lg:text-base font-bold text-gray-900 mb-1">
                 {item.title}
               </h4>
-              <p className="text-xs text-gray-400 leading-relaxed hidden sm:block">
+              <p className="text-xs lg:text-sm text-gray-400 leading-relaxed hidden sm:block">
                 {item.desc}
               </p>
             </div>

@@ -79,7 +79,7 @@ export default function PricingCards({ cards }: { cards: PricingCardProps[] }) {
   });
 
   return (
-    <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 items-stretch">
+    <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 items-stretch">
       {cards.map((card, index) => (
         <PricingCard
           key={index}
@@ -163,7 +163,7 @@ function PricingCard({
 
       {/* Plan category */}
       <p
-        className="mb-1.5 mt-8 md:mt-0 text-[10px] lg:text-xs font-bold uppercase tracking-widest"
+        className="mb-1.5 mt-8 md:mt-0 text-xs lg:text-sm font-bold uppercase tracking-widest"
         style={{ color: eyebrowColor }}
       >
         {type}
@@ -171,7 +171,7 @@ function PricingCard({
 
       {/* Title */}
       <h3
-        className="mb-1.5 lg:mb-2 text-md lg:text-xl font-extrabold leading-tight"
+        className="mb-1.5 lg:mb-2 text-lg lg:text-xl font-extrabold leading-tight"
         style={{ color: selected ? "#ffffff" : "#0f172a" }}
       >
         {title}
@@ -180,7 +180,7 @@ function PricingCard({
       {/* Description */}
       {desc && (
         <p
-          className="mb-2 lg:mb-3 text-xs lg:text-xs leading-relaxed"
+          className="mb-2 lg:mb-3 text-sm leading-relaxed"
           style={{ color: selected ? "rgba(255,255,255,0.82)" : "#64748b" }}
         >
           {desc}
@@ -193,7 +193,7 @@ function PricingCard({
           className="font-extrabold leading-none"
           style={{ color: selected ? "#ffffff" : "#0f172a" }}
         >
-          <span className="text-sm lg:text-base">Price : {price}</span>
+          <span className="text-base lg:text-lg">Price : {price}</span>
         </span>
       </div>
 
@@ -203,7 +203,7 @@ function PricingCard({
           <div key={f} className="flex items-start gap-2">
             <CheckIcon />
             <span
-              className="text-xs lg:text-sm leading-snug"
+              className="text-sm lg:text-base leading-snug"
               style={{ color: selected ? "#ffffff" : "#475569" }}
             >
               {f}
@@ -218,7 +218,7 @@ function PricingCard({
 
       <a
         href="#demo"
-        className="block text-center py-2.5 lg:py-3 rounded-lg lg:rounded-xl font-bold text-[13px] lg:text-sm transition-opacity hover:opacity-90"
+        className="block text-center py-2.5 lg:py-3 rounded-lg lg:rounded-xl font-bold text-sm lg:text-base transition-opacity hover:opacity-90"
         style={
           selected
             ? { backgroundColor: "#ffffff", color: "#0071cd" }

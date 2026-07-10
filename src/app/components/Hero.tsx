@@ -64,7 +64,7 @@ export default function Hero() {
             </h1>
 
             {/* Description */}
-            <p className="text-sm sm:text-lg text-gray-500 leading-relaxed mb-5 sm:mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-500 leading-relaxed mb-5 sm:mb-8 max-w-xl lg:max-w-2xl mx-auto lg:mx-0">
               Triplla is an all-in-one travel CRM and DMC management software
               built for travel agencies, inbound tour operators, outbound
               agencies, DMCs and MICE travel teams.
