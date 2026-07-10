@@ -41,7 +41,7 @@ export default function DemoCTA() {
               <h2 className="text-xl lg:text-2xl font-extrabold text-white mb-2 lg:mb-3">
                 See how Triplla can help your travel business.
               </h2>
-              <p className="text-blue-200 text-xs lg:text-sm mb-4 lg:mb-6 leading-relaxed hidden md:block">
+              <p className="text-blue-200 text-sm lg:text-base mb-4 lg:mb-6 leading-relaxed hidden md:block">
                 Book a short demo and discover how Triplla can make your daily
                 work easier. We'll show you how to manage inquiries, quotations,
                 bookings, suppliers, payments and reports in one simple
@@ -69,10 +69,10 @@ export default function DemoCTA() {
                   <div key={item.title} className="flex items-start gap-3">
                     <span className="text-lg hidden md:block">{item.icon}</span>
                     <div>
-                      <p className="text-xs font-bold text-white">
+                      <p className="text-sm font-bold text-white">
                         {item.title}
                       </p>
-                      <p className="text-xs text-blue-200">{item.desc}</p>
+                      <p className="text-xs sm:text-sm text-blue-200">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -92,7 +92,7 @@ export default function DemoCTA() {
                   <h3 className="text-lg font-bold text-gray-900">
                     Request received!
                   </h3>
-                  <p className="text-gray-500 text-xs">
+                  <p className="text-gray-500 text-sm">
                     Our team will reach out within 1 business day to schedule
                     your demo.
                   </p>
@@ -108,7 +108,7 @@ export default function DemoCTA() {
                   >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 lg:gap-3">
                       <div>
-                        <label className="block text-xs font-semibold text-gray-600 mb-1">
+                        <label className="block text-sm font-semibold text-gray-600 mb-1">
                           Your Name *
                         </label>
                         <input
@@ -118,12 +118,12 @@ export default function DemoCTA() {
                           onChange={(e) =>
                             setForm({ ...form, name: e.target.value })
                           }
-                          className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-xs lg:text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
+                          className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-sm lg:text-base text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
                           placeholder="Chamara Silva"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-gray-600 mb-1">
+                        <label className="block text-sm font-semibold text-gray-600 mb-1">
                           Agency Name *
                         </label>
                         <input
@@ -133,13 +133,13 @@ export default function DemoCTA() {
                           onChange={(e) =>
                             setForm({ ...form, agency: e.target.value })
                           }
-                          className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-xs lg:text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
+                          className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-sm lg:text-base text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
                           placeholder="Emerald Isle Tours"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-600 mb-1">
+                      <label className="block text-sm font-semibold text-gray-600 mb-1">
                         Work Email *
                       </label>
                       <input
@@ -149,12 +149,12 @@ export default function DemoCTA() {
                         onChange={(e) =>
                           setForm({ ...form, email: e.target.value })
                         }
-                        className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-xs lg:text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
+                        className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-sm lg:text-base text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
                         placeholder="chamara@emeraldisletours.com"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-600 mb-1">
+                      <label className="block text-sm font-semibold text-gray-600 mb-1">
                         Mobile / WhatsApp number *
                       </label>
                       <input
@@ -164,12 +164,12 @@ export default function DemoCTA() {
                         onChange={(e) =>
                           setForm({ ...form, phone: e.target.value })
                         }
-                        className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-xs lg:text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
+                        className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-sm lg:text-base text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
                         placeholder="+94712345678"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-600 mb-1">
+                      <label className="block text-sm font-semibold text-gray-600 mb-1">
                         Country *
                       </label>
                       <input
@@ -179,15 +179,15 @@ export default function DemoCTA() {
                         onChange={(e) =>
                           setForm({ ...form, country: e.target.value })
                         }
-                        className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-xs lg:text-sm text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
+                        className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-sm lg:text-base text-gray-800 focus:outline-none focus:border-blue-400 transition-colors"
                         placeholder="Sri Lanka"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-600 mb-1">
+                      <label className="block text-sm font-semibold text-gray-600 mb-1">
                         Number of employees *
                       </label>
-                      <select className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-xs lg:text-sm text-gray-600 focus:outline-none focus:border-blue-400 transition-colors bg-white">
+                      <select className="w-full border border-gray-200 rounded-lg px-3 py-1.5 lg:py-2 text-sm lg:text-base text-gray-600 focus:outline-none focus:border-blue-400 transition-colors bg-white">
                         <option>Below 5</option>
                         <option>5-19</option>
                         <option>20-49</option>
@@ -197,7 +197,7 @@ export default function DemoCTA() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full py-2 lg:py-2.5 rounded-xl font-semibold text-white text-xs lg:text-sm mt-1 transition-all hover:opacity-90 shadow-md"
+                      className="w-full py-2 lg:py-2.5 rounded-xl font-semibold text-white text-sm lg:text-base mt-1 transition-all hover:opacity-90 shadow-md"
                       style={{ backgroundColor: "#0071cd" }}
                     >
                       Request A Demo →

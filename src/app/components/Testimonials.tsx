@@ -57,7 +57,7 @@ export default function Testimonials() {
                 "
               </div>
 
-              <p className="text-gray-600 leading-relaxed mb-3 lg:mb-5 text-xs lg:text-sm">
+              <p className="text-gray-600 leading-relaxed mb-3 lg:mb-5 text-sm lg:text-base">
                 {t.text}
               </p>
 
@@ -97,10 +97,10 @@ export default function Testimonials() {
                       .join("")}
                   </div>
                   <div>
-                    <p className="text-xs lg:text-sm font-bold text-gray-900">
+                    <p className="text-sm lg:text-base font-bold text-gray-900">
                       {t.name}
                     </p>
-                    <p className="text-xs text-gray-400">{t.role}</p>
+                    <p className="text-xs lg:text-sm text-gray-400">{t.role}</p>
                   </div>
                 </div>
 

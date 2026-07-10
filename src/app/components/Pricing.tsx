@@ -81,7 +81,7 @@ export default function Pricing() {
         <PricingCards cards={pricingCards} />
 
         {/* Custom solution banner */}
-        <div className="max-w-5xl mx-auto mt-5">
+        <div className="max-w-6xl mx-auto mt-5">
           <div
             className="rounded-xl p-4 sm:p-5 border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
             style={{ backgroundColor: "#fffbeb", borderColor: "#fde68a" }}

@@ -96,7 +96,7 @@ export default function AccelerateSales() {
               className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/20 text-center"
             >
               <p
-                className="lg:text-2xl font-black text-white mb-0.5 leading-tight"
+                className="text-lg lg:text-2xl font-black text-white mb-0.5 leading-tight"
                 style={{
                   color: s.value === "Zero" ? "#fcb51b" : "white",
                   // fontSize: s.value.length > 4 ? "1.1rem" : "1.6rem",
@@ -104,10 +104,10 @@ export default function AccelerateSales() {
               >
                 {s.value}
               </p>
-              <p className="text-xs font-semibold text-blue-100 mb-0.5">
+              <p className="text-xs sm:text-sm font-semibold text-blue-100 mb-0.5">
                 {s.label}
               </p>
-              <p className="text-xs text-blue-300 leading-relaxed hidden sm:block">
+              <p className="text-xs sm:text-sm text-blue-300 leading-relaxed hidden sm:block">
                 {s.desc}
               </p>
             </div>
@@ -122,10 +122,10 @@ export default function AccelerateSales() {
               className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/20 hover:bg-white/15 transition-colors"
             >
               <span className="hidden mb-2 sm:mb-3 lg:block">{f.icon}</span>
-              <h3 className="text-sm sm:text-base font-bold text-white mb-1.5">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-1.5">
                 {f.title}
               </h3>
-              <p className="text-xs sm:text-sm text-blue-200 leading-relaxed">
+              <p className="text-sm sm:text-base text-blue-200 leading-relaxed">
                 {f.desc}
               </p>
             </div>
